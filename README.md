@@ -1,22 +1,24 @@
-# Text2Room
-Text2Room generates textured 3D meshes from a given text prompt using 2D text-to-image models.
+# Orthogonal-3D-Scene-Generation: Text2Room-Orthogonal
+This project is based on Text2Room and generates orthogonal 3D rooms from a given text prompt using 2D text-to-image models.
 
-This is the official repository that contains source code for the ICCV 2023 paper [Text2Room](https://lukashoel.github.io/text-to-room/).
+For the original Text2Room project refer to:
 
 [[arXiv](https://arxiv.org/abs/2303.11989)] [[Project Page](https://lukashoel.github.io/text-to-room/)] [[Video](https://youtu.be/fjRnFL91EZc)]
 
 ![Teaser](docs/teaser.jpg "Text2Room")
 
-If you find Text2Room useful for your work please cite:
-```
-@preprint{hoellein2023text2room,
-  title={Text2Room: Extracting Textured 3D Meshes from 2D Text-to-Image Models},
-  author={H{\"o}llein, Lukas and Cao, Ang and Owens, Andrew and Johnson, Justin and Nie{\ss}ner, Matthias},
-  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
-  year={2023}
-}
-```
+## Custom arguments
 
+This project is identical to Text2Room apart from extra functionalities that you can activate as follows:
+
+Add the following arguments to ```python generate_scene.py```:
+- ```--orth_mode none``` for default Text2Room (no orthogonalization)
+- ```--orth_mode rot``` to achieve orthogonality via plane rotation << DEFAULT
+- ```--orth_mode proj``` to achieve orthogonality by projecting vertices onto the orthogonal plane
+- ```--repaint True``` to repaint the orthogonalized content (slow, not recommended)
+- ```--depth_details True``` to re-integrate depth details into the flattened plane, using a technique from Poisson Image Editing, after ```--orth_mode proj``` (slow, not recommended)
+
+The following instructions are from the original Text2Room project:
 ## Prepare Environment
 
 Create a conda environment:
@@ -199,4 +201,3 @@ We thank the authors for providing them.
 [1] IronDepth: Iterative Refinement of Single-View Depth using Surface Normal and its Uncertainty, BMVC 2022, Gwangbin Bae, Ignas Budvytis, and Roberto Cipolla
 
 [2] High-Resolution Image Synthesis with Latent Diffusion Models, CVPR 2022, Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn Ommer
-# Orthogonal-3D-Scene-Generation
