@@ -5,8 +5,6 @@ For the original Text2Room project refer to:
 
 [[arXiv](https://arxiv.org/abs/2303.11989)] [[Project Page](https://lukashoel.github.io/text-to-room/)] [[Video](https://youtu.be/fjRnFL91EZc)]
 
-![Teaser](docs/teaser.jpg "Text2Room")
-
 ## Custom arguments
 
 This project is identical to Text2Room apart from extra functionalities that you can activate as follows:
